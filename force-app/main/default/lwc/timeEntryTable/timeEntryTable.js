@@ -2,21 +2,49 @@ import { LightningElement } from 'lwc';
 import generateData from './generateData';
 
 const columns = [
-	{ label: 'PROJECT/ASSIGNMENT', fieldName: 'name' },
-	{ label: 'ADMIN HOUR', fieldName: 'website', type: 'url' },
-	{ label: 'MON', fieldName: 'phone', type: 'phone' },
+	{
+		label: 'PROJECT/ASSIGNMENT',
+		fieldName: 'name'
+	},
+	{
+		label: 'ADMIN HOUR',
+		type: 'checkbox'
+	},
+	{
+		label: 'MON',
+		type: 'number'
+	},
+	{
+		label: 'TUE',
+		type: 'number'
+	},
+	{
+		label: 'WED',
+		type: 'number'
+	},
+	{
+		label: 'THU',
+		type: 'number'
+	},
+	{
+		label: 'FRI',
+		type: 'number'
+	},
+	{
+		label: 'SAT',
+		type: 'number'
+	},
+	{
+		label: 'SUN',
+		type: 'number'
+	},
 ];
 
 export default class BasicDatatable extends LightningElement {
 	data = [];
 	columns = columns;
-	rowOffset = 0;
 
 	connectedCallback() {
-		this.data = generateData({ amountOfRecords: 100 });
-	}
-
-	increaseRowOffset() {
-		this.rowOffset += 100;
+		this.data = generateData({ amountOfRecords: 5 });
 	}
 }
